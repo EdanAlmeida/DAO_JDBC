@@ -1,7 +1,7 @@
 package application;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -13,8 +13,18 @@ public class Program {
 	public static void main(String[] args) {
 
 		SellerDao sellerDao = DaoFactory.createSellerDao();
+		
+		System.out.println("=== TEST 1: Seller findById ===");
 		Seller seller = sellerDao.findById(1);
 		System.out.println(seller);
+		
+		System.out.println("\n=== TEST 2: Seller findByDepartment ===");
+		Department dept = new Department(2, null);
+		List<Seller> listSeller = sellerDao.findByDepartment(dept);
+		
+		for (Seller obj : listSeller) {
+			System.out.println(obj);
+		}
 
 	}
 

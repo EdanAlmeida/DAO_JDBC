@@ -1,6 +1,10 @@
 package application;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import model.entities.Department;
+import model.entities.Seller;
 
 public class Program {
 
@@ -29,12 +33,17 @@ public class Program {
 //			DB.closeConnection();
 //		}
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		Department dpt = new Department();
+		
 		
 		dpt.setId(1);
 		dpt.setName("Books");
 		
+		Seller seller = new Seller(1, "Edan Almeida", "email@email.com", new Date(), 3000.0, dpt);
+		
 		System.out.println(dpt);
+		System.out.println(seller);
 		
 
 	}

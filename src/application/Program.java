@@ -14,36 +14,41 @@ public class Program {
 
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
-		System.out.println("=== TEST 1: Seller findById ===");
-		Seller seller = sellerDao.findById(1);
-		System.out.println(seller);
+//		System.out.println("=== TEST 1: Seller findById ===");
+//		Seller seller = sellerDao.findById(1);
+//		System.out.println(seller);
+//		
+//		System.out.println("\n=== TEST 2: Seller findByDepartment ===");
+//		Department dept = new Department(2, null);
+//		List<Seller> listSeller = sellerDao.findByDepartment(dept);
+//		
+//		for (Seller obj : listSeller) {
+//			System.out.println(obj);
+//		}
+//		
+//		System.out.println("\n=== TEST 3: Seller findAll ===");
+//		List<Seller> listAllSellers = sellerDao.findAll();
+//		
+//		for (Seller obj : listAllSellers) {
+//			System.out.println(obj);
+//		}
+//		
+//		System.out.println("\n=== TEST 4: Seller insert ===");
+//		Seller newSeller = new Seller(null, "Marcelo", "email@gmail.com", new Date(), 4000.0, dept);
+//		sellerDao.insert(newSeller);
+//		System.out.println("Inserted. New id = " + newSeller.getId());
+//		
+//		
+//		System.out.println("\n=== TEST 5: Seller update ===");
+//		newSeller = sellerDao.findById(1);
+//		newSeller.setName("Bruce Waine");
+//		sellerDao.update(newSeller);
+//		System.out.println("Update completed");
 		
-		System.out.println("\n=== TEST 2: Seller findByDepartment ===");
-		Department dept = new Department(2, null);
-		List<Seller> listSeller = sellerDao.findByDepartment(dept);
+		System.out.println("\n=== TEST 6: Seller delete ===");
+		sellerDao.deleteById(10);
+		System.out.println("Seller Deleted");
 		
-		for (Seller obj : listSeller) {
-			System.out.println(obj);
-		}
-		
-		System.out.println("\n=== TEST 3: Seller findAll ===");
-		List<Seller> listAllSellers = sellerDao.findAll();
-		
-		for (Seller obj : listAllSellers) {
-			System.out.println(obj);
-		}
-		
-		System.out.println("\n=== TEST 4: Seller insert ===");
-		Seller newSeller = new Seller(null, "Marcelo", "email@gmail.com", new Date(), 4000.0, dept);
-		sellerDao.insert(newSeller);
-		System.out.println("Inserted. New id = " + newSeller.getId());
-		
-		
-		System.out.println("\n=== TEST 5: Seller update ===");
-		newSeller = sellerDao.findById(1);
-		newSeller.setName("Bruce Waine");
-		sellerDao.update(newSeller);
-		System.out.println("Update completed");
 		
 	}
 

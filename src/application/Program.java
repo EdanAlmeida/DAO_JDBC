@@ -3,6 +3,8 @@ package application;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -41,6 +43,8 @@ public class Program {
 		dpt.setName("Books");
 		
 		Seller seller = new Seller(1, "Edan Almeida", "email@email.com", new Date(), 3000.0, dpt);
+		
+		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
 		System.out.println(dpt);
 		System.out.println(seller);
